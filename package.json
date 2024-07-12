@@ -1,0 +1,29 @@
+{
+  "name": "manga-reader-chapters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "@types/puppeteer": "^7.0.4",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.614.0",
+    "express": "^4.19.2",
+    "puppeteer": "^22.13.0"
+  }
+}
