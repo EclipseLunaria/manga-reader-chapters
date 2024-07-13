@@ -1,7 +1,7 @@
 import puppeteer, { Browser, Page } from "puppeteer";
 import { ElementHandle } from "puppeteer";
 import { uploadBuffer } from "../utils/aws";
-
+import axios from "axios";
 const extractChapter = async (mangaId: string, chapterId: string): Promise<string[]> => {
     const ChapterUrl = `https://chapmanganato.to/manga-${mangaId}/chapter-${chapterId}`;
 
@@ -29,7 +29,8 @@ const extractChapter = async (mangaId: string, chapterId: string): Promise<strin
     await browser.close();
 
     for (let i = 0; i < chapterImages.length; i++) {
-        await uploadBuffer("manga-reader-chapters", `manga-${mangaId}/chapter-${chapterId}`, `page-${i}.jpg`, chapterImages[i]);
+        await uploadBuffer("manga-reader-chapters", `manga-${mangaId}/chapter-${chapterId}`, `page-${i}`, chapterImages[i]);
+
         console.log("uploaded page", i);
     }
     console.log("uploaded all pages");

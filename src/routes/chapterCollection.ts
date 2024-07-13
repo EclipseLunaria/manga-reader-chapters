@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { bucketExists, getChapterImages, prefixExists, uploadFile } from "../utils/aws";
+import { getChapterImages } from "../utils/aws";
 import extractChapter from "../services/chapterExtractor";
 const collectionRouter = Router();
 
